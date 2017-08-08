@@ -20,4 +20,29 @@ Object.defineProperties(obj, {
 			this._year = newYear;
 		}
 	}
-})
+});
+
+
+function Person(){}
+Person.prototype.name = "孙小双";
+
+var p1 = new Person();
+
+console.log(p1);
+
+Person.prototype = {
+	age: "介绍介绍",
+	construction: Person
+};
+
+console.log(p1);
+
+var p2 = new Person();
+console.log(p2);
+
+function PrototypeType(){}
+PrototypeType.prototype.abc = "孙小双";
+function SubPrototypeType(){};
+SubPrototypeType.prototype = new PrototypeType();
+var d = new SubPrototypeType();
+console.log(d instanceof PrototypeType)
