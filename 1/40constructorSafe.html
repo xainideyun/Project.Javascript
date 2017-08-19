@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>40constructorSafe</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	function Box (size) {
+    		if(this instanceof Box){
+    			this.size = size;
+    			this.getArea = function(){
+    				return size * size;
+    			}
+    		} else {
+    			return new Box(size);
+    		}
+    	}
+
+    	function Rect(size, width, height){
+    		Box.call(this, size);
+    		this.width = width;
+    		this.height = height;
+    	}
+
+    	Rect.prototype = new Box();
+
+    	var a = new Rect(1,2,3);
+    	console.log(a)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>29message</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onload = function(){
+            var iframWindow = document.getElementById("iframe1").contentWindow;
+    		var btn = document.getElementById("btn"), msg = document.querySelector("#message");
+    		btn.addEventListener("click", send);
+    		msg.addEventListener("keyup", send);
+
+    		function send(e){
+                if(e.type === "keyup" && e.keyCode !==13)return;
+                iframWindow.postMessage(msg.value, "*");
+    		}
+    	};
+    </script>
+</head>
+
+<body>
+	消息：<input type="text" id="message" name="message"><button id="btn">确定</button><br>
+	<iframe src="30message.html" frameborder="0" id="iframe1" width="500" height="500"></iframe>
+</body>
+
+</html>

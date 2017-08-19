@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>31drag</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 10px;
+    }
+
+    div:nth-child(1) {
+        background-color: yellow;
+    }
+
+    div:last-child {
+        background-color: blue;
+    }
+    </style>
+    <script>
+    	window.onload = function(){
+
+    		var ds = document.getElementsByTagName("div");
+    		var i, len;
+    		for(i = 0, len = ds.length; i < len; i++){
+    			ds[i].addEventListener("dragenter", dragEnter);
+    			ds[i].addEventListener("dragover", dragOver);
+    			ds[i].addEventListener("drop", drop);
+    		}
+
+    		function dragEnter(e){
+    			// console.log(e);
+    			e.preventDefault();
+    		}
+    		function dragOver(e){
+    			e.preventDefault();
+    		}
+    		function drop(e){
+    			console.log(e.dataTransfer.getData("text"));
+    			e.preventDefault();
+    		}
+    	};
+    </script>
+</head>
+
+<body>
+    <div id="d1" draggable="true" dropable="true"></div>
+    <div id="d2" draggable="true" dropable="true"></div>
+    <label for="">你好吗</label>
+    <div id="d3" draggable="true" dropable="true"></div>
+</body>
+
+</html>

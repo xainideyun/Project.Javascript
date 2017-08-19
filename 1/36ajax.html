@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>36ajax</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    window.onload = function() {
+        var l1 = document.querySelector("#l1");
+        var xhr = createXHR();
+        // xhr.open("get", "34error.html");
+        xhr.open("get", "sources/1.mp3");
+        xhr.onload = function(e){
+        	if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+        		alert(xhr.responseText);
+        	} else {
+        		alert("请求错误：" + xhr.status);
+        	}
+        };
+
+        xhr.onprogress = function(e){
+        	console.log(e)
+        	l1.innerHTML = "接收到数据：" + e.loaded + "byte，共" + e.total + "byte";
+        };
+        xhr.send(null);
+    };
+
+    function createXHR() {
+        if (typeof XMLHttpRequest != "undefined") {
+            return new XMLHttpRequest();
+        } else if (typeof arguments.calle.activeXString != "string") {
+            var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"],
+                i, len;
+            for (i = 0, len = versions.length; i < len; i++) {
+                try {
+                    new ActiveXObject(versions[i]);
+                    arguments.callee.activeXString = versions[i];
+                    break;
+                } catch (ex) {
+
+                }
+            }
+            return new ActiveXObject(arguments.callee.activeXString);
+        } else {
+        	throw new Error("无xhr可用");
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <label for="" id="l1"></label>
+</body>
+
+</html>

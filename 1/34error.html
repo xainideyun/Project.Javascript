@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>34error</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onerror = function (message, url, line) {
+    		console.log(message);
+    	};
+    	// throw 1;
+    	// var a = [];
+    	// var b = a[2].val()
+    	window.addEventListener("DOMContentLoaded", function(e){
+    		var img = document.querySelector("img");
+    		img.onerror = function(e){
+    			console.log(e);
+    		}
+    	});
+    </script>
+</head>
+
+<body>
+	<img src="1.jpg" alt="" id="img">
+</body>
+
+</html>
