@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>04AOP</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    Function.prototype.before = function(callback){
+      var __self = this;
+      return function(){
+        callback.apply(this, arguments);
+        return __self.apply(this, arguments);
+      };
+    };
+    Function.prototype.after = function(callback){
+      var __self = this;
+      return function(){
+        var ret = __self.apply(this, arguments);
+        callback.apply(this, arguments);
+        return ret;
+      };
+    };
+    function func(){console.log(2)};
+    var a = func.before(function(){console.log(1);}).after(function(){console.log(3);});
+    a();
+  </script>
+</head>
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            ...
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>49hashchange</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onload = function () {
+    		var num = 0;
+    		window.addEventListener("hashchange", function(){
+    			console.log(num++);
+    		});	
+    	};
+    </script>
+</head>
+
+<body>
+	<a href="#a1">a1</a>
+	<a href="#a2">a2</a>
+	<a href="#a3">a3</a>
+</body>
+
+</html>
