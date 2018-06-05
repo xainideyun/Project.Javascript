@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" id="form" onsubmit="return false" action="index.html" method="post">
+              <div class="form-group" v-bind:class="{ 'has-success': success, 'has-error': error }">
+                <label for="txtname">姓名</label>
+                <input type="text" class="form-control" id="txtname" placeholder="">
+                <p class="help-block">Help text here.</p>
+                <button class="btn btn-default" v-on:click="change()">切换</button>
+              </div>
+              <div class="form-group">
+                <template v-if="sign == 'username'">
+                  <label for="txtremark">备注</label>
+                  <input type="text" class="form-control" id="txtremark" placeholder="请输入用户名">
+                </template>
+                <template v-else>
+                    <label for="txtremark">备注</label>
+                    <input type="text" class="form-control" id="txtremark" placeholder="请输入邮箱">
+                  </template>
+                <button class="btn btn-success" v-on:click="loginChange()">确定</button>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/04.js"></script>
+</body>
+
+</html>

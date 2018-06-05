@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="400"></canvas>
+</body>
+
+	<script>	
+	var canvas = document.getElementById("myCanvas");
+	var ctx =	canvas.getContext("2d");
+					// const ctx = wx.createCanvasContext('myCanvas')
+
+// Draw points
+ctx.beginPath()
+ctx.arc(20, 20, 2, 0, 2 * Math.PI)
+ctx.fillStyle = "red";
+ctx.fill()
+
+ctx.beginPath()
+ctx.arc(200, 20, 2, 0, 2 * Math.PI)
+ctx.fillStyle = "lightgreen";
+ctx.fill()
+
+ctx.beginPath()
+ctx.arc(20, 100, 2, 0, 2 * Math.PI)
+ctx.fillStyle = "blue";
+ctx.fill()
+
+ctx.fillStyle = "black";
+// ctx.setFontSize(12)
+
+// Draw guides
+ctx.beginPath()
+ctx.moveTo(20, 20)
+ctx.lineTo(20, 100)
+ctx.lineTo(200, 20)
+// ctx.setStrokeStyle('#AAAAAA')
+ctx.stroke()
+
+// Draw quadratic curve
+ctx.beginPath()
+ctx.moveTo(20, 20)
+ctx.quadraticCurveTo(20, 100, 200, 20)
+// ctx.setStrokeStyle('black')
+ctx.stroke()
+
+// ctx.draw()
+	</script>
+</html>

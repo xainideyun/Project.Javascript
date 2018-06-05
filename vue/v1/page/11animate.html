@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css">
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            <button class="btn btn-primary" @click="toggle">切换</button>
+            <div class="animated" v-show="hide"
+            :style="{backgroundColor: 'red', width: '90px', height: '90px'}" transition="switch"></div>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../lib/vue-resource.js"></script>
+  <script src="../js/11.js"></script>
+</body>
+
+</html>

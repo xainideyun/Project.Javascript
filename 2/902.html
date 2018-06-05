@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮上拉</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+    .shangla {
+        position: absolute;
+        background-color: blue;
+        opacity: .5;
+        height: 0px;
+        width: 100%;
+        bottom: 0px;
+    }
+    </style>
+    <script src='js/jquery.js'></script>
+    <script type="text/javascript">
+    $(function() {
+        var $div = $(".shangla");
+        var sign = false;
+        $(".btn").click(function() {
+            sign = !sign;
+            $div.stop().animate({ height: sign ? 300 : 0 });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button class="btn btn-primary">确定</button>
+    <div style="position: absolute; top: 100px; left: 300px;">
+        <button class="btn btn-success" style="margin: 100px;">哈哈</button>
+    </div>
+    <div class="shangla">
+        <h1>呵呵</h1>
+    </div>
+</body>
+
+</html>

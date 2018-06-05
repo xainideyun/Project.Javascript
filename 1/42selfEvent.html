@@ -13,8 +13,8 @@
         this.handlers = {};
     }
     EventTarget.prototype = {
-            constructor: EventTarget,
-            addHandler: function(type, method) {
+        constructor: EventTarget,
+        addHandler: function(type, method) {
                 if (typeof this.handlers[type] == "undefined") {
                 this.handlers[type] = [];
             }

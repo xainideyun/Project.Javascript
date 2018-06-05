@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+
+  </script>
+</head>
+<body style="padding: 2em 2em;">
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li v-for="(item, index) in list" class="list-group-item" :class="{ 'list-group-item-success': index%2}" @click="event2(item, $event)">
+                {{item.name}}
+              </li>
+            </ul>
+            <input type="text" class="form-control" @keyup.enter="event1"><br>
+            <input type="text" class="form-control" @keydown.insert="event3">
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/07.js"></script>
+</body>
+</html>

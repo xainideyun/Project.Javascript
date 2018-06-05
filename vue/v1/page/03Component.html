@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+
+  </script>
+</head>
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body" id="body">
+            <ul class="list list-group">
+              <sunxsh-li v-bind:key="item.id" v-bind:item="item" v-for="item in list"></sunxsh-li>
+              <li class="list-group-item">{{fullName}}</li>
+            </ul>
+            <form class="form-horizontal" action="#" method="post">
+              <div class="form-group">
+                <label for="txtqQuestion">问题：</label>
+                <input type="text" class="form-control" id="txtqQuestion" v-model="question">
+                <p class="help-block">Help text here.</p>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/03.js"></script>
+</body>
+</html>

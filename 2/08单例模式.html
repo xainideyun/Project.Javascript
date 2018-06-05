@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>单例模式</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    var getSingle = function(fn) {
+      var result;
+      return function() {
+        return result || (result = fn.apply(this, arguments));
+      };
+    };
+
+    var getLoginWindow = getSingle(function(html) {
+      var div = document.createElement("div");
+      div.innerHTML = html;
+      document.getElementsByClassName("panel-body")[0].appendChild(div);
+      return div;
+    });
+    var getList = getSingle(function() {
+      var ul = document.createElement("ul"), li;
+      ul.className = "list-group";
+      for (var i = 1; i < 6; i++) {
+        li = document.createElement("li");
+        li.className = "list-group-item list-group-item-success";
+        li.innerHTML = i;
+        ul.appendChild(li);
+      }
+      getLoginWindow().appendChild(ul);
+      return ul;
+    });
+
+    window.onload = function() {
+      getLoginWindow("你在吗");
+    };
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">单例模式</h3>
+          </div>
+          <div class="panel-body">
+            ...
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

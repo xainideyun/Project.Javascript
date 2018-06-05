@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            ...
+          </div>
+          <div class="panel-footer">
+            <form class="form-horizontal" action="#" method="post">
+              <div class="form-group has-success">
+                <label for="txtname" class="control-label col-md-2">姓名</label>
+                <div class="col-md-10">
+                  <input type="text" class="form-control" v-bind="obj" placeholder="输入姓名...">
+                  <p class="help-block">{{name}}</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtname" class="control-label col-md-2">事件</label>
+                <div class="col-md-10">
+                  <ul class="list-group">
+                    <li class="list-group-item" :data-age="item.age" v-for="item in list">
+                      <my-sunxsh v-bind:item="item" v-bind:class="item.cls">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtname" class="control-label col-md-2">事件2</label>
+                <div class="col-md-10">
+                  <p class="help-block">{{ total }}</p>
+                  <my-sunxsh-2 v-on:add="addParent()" v-on:click.native="alert()"></my-sunxsh-2>
+                  <my-sunxsh-2 v-on:add="addParent()"></my-sunxsh-2>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="float: left; background: red;width:200px;height:200px;">
+  </div>
+  <div style="background: #4e4e4e; overflow:hidden">
+    <p style="float: left">思念的男的女的</p>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/09.js"></script>
+</body>
+
+</html>

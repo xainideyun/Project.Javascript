@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    $(function() {
+      $(document).on("dragstart", "li", function(e) {
+
+      });
+      $(document).on("drag", "li", function(e) {
+
+      });
+      $(document).on("dragend", "li", function(e) {
+        console.log(e)
+      });
+      $(document).on("dropenter", "ul", function(e) {
+        e.preventDefault();
+      });
+      $(document).on("dragover", "ul", function(e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group" dropable="true">
+              <li class="list-group-item list-group-item-danger" draggable="true">李娟娟</li>
+              <li class="list-group-item list-group-item-danger" draggable="true">孙小双</li>
+              <li class="list-group-item list-group-item-danger" draggable="true">李怡然</li>
+              <li class="list-group-item list-group-item-danger" draggable="true">华天晓</li>
+              <li class="list-group-item list-group-item-danger" draggable="true">万星辉</li>
+            </ul>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
