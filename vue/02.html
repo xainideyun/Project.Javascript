@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>template</title>
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <ul class="list-group">
+            <li :ref="'item' + index" is="row" v-for="(item, index) in list" :num="item" @change="calc()">
+            </li>
+            <li class="list-group-item list-group-item-success">
+                {{total}}
+            </li>
+        </ul>
+        <button type="button" class="btn btn-primary" @click="calc()">统计</button>
+    </div>
+</body>
+<script src="./bower_components/vue/dist/vue.js"></script>
+<script src="./js/02.js"></script>
+
+</html>
