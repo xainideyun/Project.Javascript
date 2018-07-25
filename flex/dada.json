@@ -1,0 +1,136 @@
+{
+    "type": "接收",
+    "client_id": "277058430007712",
+    "order_id": "Cat-201806100000000205",
+    "order_status": 2,
+    "cancel_reason": "",
+    "cancel_from": 0,
+    "update_time": 1529069001,
+    "signature": "0c42356bc157bc05b0cdbeaefe020cc0",
+    "dm_id": 666,
+    "dm_name": "达达骑手",
+    "dm_mobile": "13546670420",
+    "OrderId": 0,
+    "Order": null,
+    "ID": 0,
+    "CreateTime": "2018-06-15T21:23:22.0861256+08:00"
+}
+
+{
+    "type": "取货",
+    "client_id": "277058430007712",
+    "order_id": "Cat-201806100000000205",
+    "order_status": 3,
+    "cancel_reason": "",
+    "cancel_from": 0,
+    "update_time": 1529069065,
+    "signature": "05df75dc9aba7b8a1941e3921f8d7fb8",
+    "dm_id": 666,
+    "dm_name": "达达骑手",
+    "dm_mobile": "13546670420",
+    "OrderId": 0,
+    "Order": null,
+    "ID": 0,
+    "CreateTime": "2018-06-15T21:24:25.9732748+08:00"
+}
+
+{
+    "type": "完成",
+    "client_id": "277058430007712",
+    "order_id": "Cat-201806100000000205",
+    "order_status": 4,
+    "cancel_reason": "",
+    "cancel_from": 0,
+    "update_time": 1529069113,
+    "signature": "d4cdcb93a116a39bf19b1c8a9f3c127f",
+    "dm_id": 666,
+    "dm_name": "达达骑手",
+    "dm_mobile": "13546670420",
+    "OrderId": 0,
+    "Order": null,
+    "ID": 0,
+    "CreateTime": "2018-06-15T21:25:13.5815636+08:00"
+}
+
+{
+    "type": "取消",
+    "client_id": "277058430007712",
+    "order_id": "Cat-201806100000000205",
+    "order_status": 5,
+    "cancel_reason": "取消订单",
+    "cancel_from": 2,
+    "update_time": 1529069153,
+    "signature": "31633ec9cedabcc1cff24c8393772c2d",
+    "dm_id": 666,
+    "dm_name": "达达骑手",
+    "dm_mobile": "13546670420",
+    "OrderId": 0,
+    "Order": null,
+    "ID": 0,
+    "CreateTime": "2018-06-15T21:25:53.7824681+08:00"
+}
+
+{
+    "type": "过期",
+    "client_id": "277058430007712",
+    "order_id": "Cat-201806100000000205",
+    "order_status": 7,
+    "cancel_reason": "",
+    "cancel_from": 0,
+    "update_time": 1529069209,
+    "signature": "a355e5bb951631c8c59376ed80885ac5",
+    "dm_id": 666,
+    "dm_name": "达达骑手",
+    "dm_mobile": "13546670420",
+    "OrderId": 0,
+    "Order": null,
+    "ID": 0,
+    "CreateTime": "2018-06-15T21:26:49.4797801+08:00"
+}
+
+[
+{
+    "reason": "没有配送员接单",
+    "id": 1
+},
+{
+    "reason": "配送员没来取货",
+    "id": 2
+},
+{
+    "reason": "配送员态度太差",
+    "id": 3
+},
+{
+    "reason": "顾客取消订单",
+    "id": 4
+},
+{
+    "reason": "订单填写错误",
+    "id": 5
+},
+{
+    "reason": "配送员让我取消此单",
+    "id": 34
+},
+{
+    "reason": "配送员不愿上门取货",
+    "id": 35
+},
+{
+    "reason": "我不需要配送了",
+    "id": 36
+},
+{
+    "reason": "配送员以各种理由表示无法完成订单",
+    "id": 37
+},
+{
+    "reason": "其他",
+    "id": 10000
+}]
+
+
+{"status":"fail","errorCode":2001,"code":2001,"msg":"app_key无效"}
+
+{"status":"success","result":[{"cityName":"上海","cityCode":"021"},{"cityName":"北京","cityCode":"010"},{"cityName":"合肥","cityCode":"0551"},{"cityName":"南京","cityCode":"025"},{"cityName":"苏州","cityCode":"0512"},{"cityName":"武汉","cityCode":"027"},{"cityName":"无锡","cityCode":"0510"},{"cityName":"常州","cityCode":"0519"},{"cityName":"杭州","cityCode":"0571"},{"cityName":"广州","cityCode":"020"},{"cityName":"深圳","cityCode":"0755"},{"cityName":"重庆","cityCode":"023"},{"cityName":"长沙","cityCode":"0731"},{"cityName":"成都","cityCode":"028"},{"cityName":"天津","cityCode":"022"},{"cityName":"厦门","cityCode":"0592"},{"cityName":"福州","cityCode":"0591"},{"cityName":"大连","cityCode":"0411"},{"cityName":"青岛","cityCode":"0532"},{"cityName":"哈尔滨","cityCode":"0451"},{"cityName":"济南","cityCode":"0531"},{"cityName":"郑州","cityCode":"0371"},{"cityName":"西安","cityCode":"029"},{"cityName":"宁波","cityCode":"0574"},{"cityName":"温州","cityCode":"0577"},{"cityName":"芜湖","cityCode":"0553"},{"cityName":"南通","cityCode":"0513"},{"cityName":"南昌","cityCode":"0791"},{"cityName":"石家庄","cityCode":"0311"},{"cityName":"潍坊","cityCode":"0536"},{"cityName":"嘉兴","cityCode":"0573"},{"cityName":"金华","cityCode":"0579"},{"cityName":"绍兴","cityCode":"0575"},{"cityName":"烟台","cityCode":"0535"},{"cityName":"扬州","cityCode":"0514"},{"cityName":"昆山","cityCode":"0512"},{"cityName":"佛山","cityCode":"0757"},{"cityName":"东莞","cityCode":"0769"},{"cityName":"马鞍山","cityCode":"0555"}],"code":0,"msg":"成功"}
