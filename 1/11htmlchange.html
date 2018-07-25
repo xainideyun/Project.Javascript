@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>11htmlchange</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/01.css">
+    <link href="" rel="stylesheet">
+    <style>
+    	#d1{
+    		border-radius: 10px;
+    	}
+    	div{
+    		border: 1px solid black;
+    	}
+    </style>
+    <script>
+    	window.onload = function () {
+    		var div = document.getElementById("d1");
+    		var input = document.getElementById("input1");
+    		var btn = document.getElementById("btn");
+    		btn.onclick = function(){
+    			div.style.cssText += input.value + ";";
+    		};
+    		input.onkeydown = function(e){
+    			if(e.which != 13)return;
+    			btn.onclick();
+    		};
+    	};
+    </script>
+</head>
+
+<body>
+	<svg>
+		<rect x="0" y="0" width="100" height="100" style="fill:red">
+	</svg>
+	<div style="width: 100px; height: 100px; background-color: blue;" id="d1">
+		你们好
+	</div>
+	<input type="text" id="input1"><button id="btn">确定</button>
+</body>
+
+</html>

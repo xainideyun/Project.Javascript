@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数柯里化</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    // currying
+    var currying = function(fn){
+      var args = [];
+      return function () {
+        if(arguments.length === 0){
+          return fn.apply(this, args);
+        } else {
+          Array.prototype.push.apply(args, arguments);
+          return arguments.callee;
+        }
+      };
+    };
+    var sale = function(){
+      for(var i = val = sum = 0; val = Array.prototype.shift.call(arguments);){
+        sum += val;
+      }
+      alert(sum);
+    };
+
+    // uncurrying
+    Function.prototype.uncurrying = function(){
+      var self = this;
+      return function(){
+        var obj = Array.prototype.shift.call(arguments);
+        return self.apply(obj, arguments);
+      };
+    };
+
+    var push = Array.prototype.push.uncurrying();
+    var arr = [1];
+    push(arr, 1,2);
+    console.log(arr);
+
+    (function(){
+      for(var i = 0, arr = ["shift", "push", "pop"], sign; sign = arr[i++];){
+        Array[sign] = Array.prototype[sign].uncurrying();
+      }
+    })();
+    console.log(Array)
+  </script>
+</head>
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">函数柯里化</h3>
+          </div>
+          <div class="panel-body">
+            ...
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

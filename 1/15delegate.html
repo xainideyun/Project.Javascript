@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>15delegate</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onload = function () {
+    		var table = document.getElementById("table");
+			bindEvent(table, "click", "td", function(e){
+				alert(e.target.innerText);
+			});
+    	};
+
+    	function bindEvent(element, type, target, func){
+    		element.addEventListener(type, function(e){
+    			if(e.target.tagName.toLowerCase() === target){
+    				func(e);
+    			}
+    		}, false);
+    	}
+
+    </script>
+</head>
+
+<body>
+	<table border="1" id="table">
+		<thead>
+			<th>
+				<td>序号</td>
+				<td>姓名</td>
+				<td>年龄</td>
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>孙小双</td>
+				<td>29</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李娟娟</td>
+				<td>27</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>李怡然</td>
+				<td>24</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

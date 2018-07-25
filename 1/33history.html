@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>32history</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onload = function () {
+    		var p1 = document.querySelector("#p1");
+    		var btn = document.querySelector("#btn");
+    		// btn.addEventListener("click", function(e){
+    		// 	history.pushState({name: "孙小双"}, "李怡然", "30message.html");
+    		// });	
+    		btn.addEventListener("click", function(e){
+    			var val = p1.value;
+    			window.location.href = window.location.href.substring(0, window.location.href.indexOf("#")) + "#" + val;
+    		});
+    		window.addEventListener("hashchange", function(e){
+    			console.log(e);
+    		});	
+    	};
+    </script>
+</head>
+
+<body>
+	<input type="text" id="p1"><br>
+	<button id="btn">确定</button>
+
+
+    <select name="" id="a" size="7">
+        <optgroup label="女友">
+            <option value="1">李怡然</option>
+            <option value="2">李娟娟</option>
+            <option value="3">万星辉</option>
+        </optgroup>
+        <optgroup label="老子">
+            <option value="1">华天晓</option>
+            <option value="2">孙远杰</option>
+            <option value="3">孙小双</option>
+        </optgroup>
+    </select>
+
+    <div class="container">
+        <input type="file" name="file" id="file" multiple>
+    </div>
+</body>
+
+</html>

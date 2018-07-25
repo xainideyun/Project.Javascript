@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>01</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    // 第一版
+    // var cache = {};
+    // var mult = function(){
+    //   var sign = [].join.call(arguments, ','), a = 1;
+    //   if(cache[sign])return cache[sign];
+    //   for(var i = 0, len = arguments.length; i < len; i++){
+    //     a = a * arguments[i];
+    //   }
+    //   return cache[sign] = a;
+    // };
+
+    // 第二版
+    // var mult = (function(){
+    //   var cache = {};
+    //   return function(){
+    //     var sign = [].join.call(arguments), a = 1;;
+    //     if(cache[sign])return cache[sign];
+    //     for(var i = 0, len = arguments.length; i < len; i++){
+    //       a = a * arguments[i];
+    //     }
+    //     return cache[sign] = a;
+    //   };
+    // })();
+
+    // 第三版
+    var mult = (function(){
+      var cache = {};
+      var calc = function(){
+        var a = 1;
+        for(var i = 0, len = arguments.length; i < len; i++){
+          a = a * arguments[i];
+        }
+        return a;
+      };
+      return function(){
+        var sign = [].join.call(arguments);
+        if(cache[sign])return cache[sign];
+        return cache[sign] = calc.apply(null, arguments);
+      };
+    })();
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">我是面板标题</h3>
+          </div>
+          <div class="panel-body">
+            我是面板主题内容
+          </div>
+          <div class="panel-footer">
+            我是尾部
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

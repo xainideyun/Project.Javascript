@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>24canvas</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.onload = function () {
+    		var canvas = document.querySelector("#c1");
+    		canvas.width = 500;
+    		canvas.height = 500;
+    		var context = canvas.getContext("2d");
+    		context.fillStyle = "rgba(255, 0, 0, .8)";
+    		context.fillRect(100, 100, 100, 100);
+    		context.fillStyle = "rgba(0, 255, 0, .5)";
+    		context.fillRect(150, 150, 100, 100);
+    		context.clearRect(165, 165, 20, 20);	
+    	};
+    </script>
+</head>
+
+<body>
+	<canvas id="c1"></canvas>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>20form</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script>
+    	window.addEventListener("DOMContentLoaded", function(){
+    		var name = document.forms[0].elements[0];
+    		name.addEventListener("select", function(e){
+    			var target = e.target;
+    			var start = target.selectionStart, end = target.selectionEnd, thisValue = target.value;
+    			console.log(thisValue.substring(start, end));
+    		});
+    		name.addEventListener("focus", function(e){
+    			var thisValue = e.target.value;
+    			var first = thisValue.indexOf("liyiran");
+    			if(first > -1){
+    				var last = first + "liyiran".length;
+    				e.target.setSelectionRange(first, last);
+    			}
+    		});
+    	});
+    </script>
+</head>
+
+<body>
+<form action="">
+	姓名：<input type="text" name="name" size="25" maxlength="50"><br>
+	年龄：<input type="text" name="age" pattern="\d+"><br>
+	头像：<input type="file" name="file"><br>
+	族：<select name="nation">
+		<option value="汉族">汉族</option>
+		<option value="维吾尔族">维吾尔族</option>
+	</select><br>
+	性别：<input type="radio" name="gender" value="男" id="gender-man"><label for="gender-man">男</label>
+	<input type="radio" name="gender" value="女" id="gender-woman"><label for="gender-woman">女</label><br>
+	籍贯：<select name="address" multiple>
+		<option value="篮球">武汉</option>
+		<option value="电竞">孝感</option>
+		<option value="足球">襄阳</option>
+	</select><br>
+	爱好：<input type="checkbox" name="havor" value="篮球" id="lanqiu"><label for="lanqiu">篮球</label>
+	<input type="checkbox" name="havor" value="足球" id="zuqiu"><label for="zuqiu">足球</label>
+	<input type="checkbox" name="havor" value="电竞" id="dianjing"><label for="dianjing">电竞</label><br>
+	<button>确定</button>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>35xml</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+
+    </style>
+    <script>
+    window.onload = function() {
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(a, b, c) {
+            if (req.readyState == 4) {
+            	var data = JSON.parse(req.responseText);
+            	console.log(data);
+            }
+        }
+        req.open("get", "sources/1.json");
+        req.send();
+    }
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

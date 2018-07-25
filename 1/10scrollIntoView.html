@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>10scrollIntoView</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    	#d1{
+			height: 100px;
+			background-color: red;
+    	}
+    	#d2{
+			height: 2000px;
+			background-color: blue;
+    	}
+    </style>
+    <script>
+    	window.onload = function(){
+    		var d1 = document.getElementById("d1");
+    		var d2 = document.getElementById("d2");
+    		var btn = document.getElementById("btn");
+    		btn.onclick = function(){
+    			d1.scrollIntoView();
+    		};
+    		document.body.scrollByLines(5);
+    	};
+    </script>
+</head>
+
+<body>
+	<div id="d1">
+		<p>李怡然</p>
+		<p>孙小双</p>
+	</div>
+	<div id="d2"></div>
+	<button id="btn">转到</button>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05Array</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item" v-for="(value, key) in student" :data-key="key">{{value}}</li>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" v-for="(item, index) in list">{{ index + ". " + item }}</li>
+          </ul>
+          <div class="panel-body" id="app">
+            <button class="btn btn-info">确定</button>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/05.js"></script>
+</body>
+
+</html>

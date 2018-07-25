@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container" id="app">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">百度关键字搜索</h3>
+          </div>
+          <div class="panel-body">
+            <input type="text" class="form-control" @keyup="search()" @keydown.up.prevent="up()" @keydown.down="down()" placeholder="输入关键字" v-model="key">
+            <ul class="list-group">
+              <li v-for="(val, index) in keys" class="list-group-item" :class="{active: index === nowIndex}">
+                {{val}}
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../lib/vue-resource.js"></script>
+  <script src="../js/10.js"></script>
+</body>
+
+</html>

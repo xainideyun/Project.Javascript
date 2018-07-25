@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style type="text/css">
+    	body {
+    		padding: 0;
+    		margin: 0;
+    	}
+		.box {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			list-style-type: none;
+		}
+		li {
+			width: 100px;
+			height: 100px;
+		}
+		li:nth-child(1) {
+			background-color: red;
+			flex-grow: 1;
+		}
+		li:nth-child(2) {
+			background-color: blue;
+			flex-grow: 1;
+		}
+		li:nth-child(3) {
+			background-color: yellow;
+		}
+
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

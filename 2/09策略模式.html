@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>策略模式</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    // 1. 原始静态语言的做法
+    function strategyA() {}
+    strategyA.prototype.calc = function(salary) {
+      return salary * 2;
+    };
+
+    function strategyB() {}
+    strategyB.prototype.calc = function(salary) {
+      return salary * 3;
+    };
+
+    function strategyC() {}
+    strategyC.prototype.calc = function(salary) {
+      return salary * 4;
+    };
+
+    function context() {
+      this.salary = null;
+      this.strategy = null;
+    }
+    context.prototype.setSalary = function(salary) {
+      this.salary = salary;
+    };
+    context.prototype.setStrategy = function(strategy) {
+      this.strategy = strategy;
+    };
+    context.prototype.getBonus = function() {
+      return this.strategy.calc(this.salary);
+    };
+
+    // 2. js实现方式
+    var JSContext = function(level, salary) {
+      this.level = level;
+      this.salary = salary;
+    };
+    JSContext.prototype = {
+      constractor: JSContext,
+      "A": function() {
+        return this.salary * 2;
+      },
+      "B": function() {
+        return this.salary * 3;
+      },
+      "C": function() {
+        return this.salary * 4;
+      },
+      setSalary: function(salary) {
+        this.salary = salary;
+      },
+      setStrategy: function(strategy) {
+        this.strategy = strategy;
+      },
+      calc: function() {
+        return this[this.level].apply(this, arguments);
+      }
+    };
+
+    // 3. 显示缓动动画
+
+    // 4. 表单校验
+  </script>
+</head>
+
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">策略模式</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form" class="form-horizontal" action="#">
+              <div class="form-group">
+                <label for="txtName" class="col-md-2 control-label">用户名</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="txtName" placeholder="">
+                  <p class="help-block">Help text here.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtPwd" class="col-md-2 control-label">密码</label>
+                <div class="col-md-8">
+                  <input type="password" class="form-control" id="txtPwd" placeholder="">
+                  <p class="help-block">Help text here.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtPwd" class="col-md-2 control-label">密码</label>
+                <div class="col-md-8">
+                  <label class="radio-inline">
+                    <input type="radio" name="sex" value="0" checked> 男
+                  </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="sex" value="1" checked> 女
+                    </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="panel-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>For指令</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+
+  </script>
+</head>
+<body style="padding: 2em 2em;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">title</h3>
+          </div>
+          <div class="panel-body">
+            <div id="todo-list">
+              <input type="text" v-model="newObj" class="form-control" v-on:keyup.enter="add" placeholder="添加列表项..." />
+              <ul class="list list-group">
+                <li is="my-component" v-for="(item, index) in list" v-bind:item="item" :key="item.id" @remove="list.splice(index, 1)"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/vue.js"></script>
+  <script src="../js/06.js"></script>
+</body>
+</html>
