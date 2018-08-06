@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>template</title>
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+  <link href="./bower_components/animate/animate.css" rel="stylesheet" type="text/css">
+  <style>
+    .haha {
+      position: absolute;
+      left: 100px;
+    }
+
+    .fade-enter {
+      opacity: 0;
+      left: 0;
+    }
+
+    .fade-enter-to {
+      left: 100px;
+    }
+
+    .fade-enter-active {
+      transition: all 1s;
+    }
+
+    .fade-leave {
+      left: 100px;
+    }
+
+    .fade-leave-to {
+      opacity: 0;
+      left: 0;
+    }
+
+    .fade-leave-active {
+      transition: all 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <transition name="fade">
+      <h1 v-show="show" class="haha">你好</h1>
+    </transition>
+    <button class="btn btn-primary" @click="toggle()">toggle</button>
+  </div>
+</body>
+
+<script src="./bower_components/vue/dist/vue.js"></script>
+<script src="./js/04.js"></script>
+
+
+</html>
